@@ -42,7 +42,7 @@ First I want to compile the program.
 clang buffer_overflow.c -isysroot $THEOS/sdks/iPhoneOS11.2.sdk/ -fno-stack-protector -fno-pic -o buffer_overflow
 `
 
-First I use clang, which can be downloaded through cydia. Then the next argument is the program, in this case buffer_overflow.c and then isysroot and the path to it. I have theos installed on device with some sdks so I use the ios11.2 SDK which is necessary to compile on ios11. Finally come the arguments to essentially make the program vulnerable.
+First I use clang, which can be downloaded through Cydia. Then the next argument is the program, in this case buffer_overflow.c and then isysroot and the path to it. I have theos installed on device with some sdks so I use the ios11.2 SDK which is necessary to compile on ios11. Finally come the arguments to essentially make the program vulnerable.
 
 -fno-stack-protector stands for "force no stack protector", this tells the program to disable the stack smasher that prevents stack overflows from happening. These arguments are provided by Billy Ellis so I am adding them as well. -fno-pic stands for force no position independant code. This protects against buffer overflows by forcing the program to not have ASLR enabled. Address space layout randomization randomizes where executable are loaded into memory rather than keeping the addresses the same.
 
