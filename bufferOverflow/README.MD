@@ -25,9 +25,9 @@ int main( int argc, char *argv[]) {
 }
 ```
 
-Lets walk through this step by step. At the top is the header, <stdio.h> imports the standard input and output header, hence the "stdio" name. After that is the function named secret which prints out a statement that you've completed the challenge, more on that later.
+Lets walk through this step by step. At the top is the header, `<stdio.h>` imports the standard input and output header, hence the "stdio" name. After that is the function named secret which prints out a statement that you've completed the challenge, more on that later.
 
-After this is the main() function. This has a character buffer that is meant to store your input, specifically, 8 characters. After this statement is a printf asking for your input and then a gets(). This is where the vulnerability lies.
+After this is the main() function. This contains a character buffer that is meant to store your input, specifically, 8 characters. After this statement is a printf asking for your input and then a gets(). This is where the vulnerability lies.
 
 Essentially it takes the string that you entered "%s" and tries to stuff it inside of a 8 character array. Since gets doesn't do any checks on whether your input will actually fit inside or not, it's prone to buffer overflows. The point of a buffer overflow attack is essentially to give enough random input so that you can **overwrite** the link register aka the _return address_ and effectively redirecting the control flow of the program to wherever you desire.
 Usually the place you redirect to *bypasses* the security measures put in place by the program.
@@ -35,8 +35,9 @@ Usually the place you redirect to *bypasses* the security measures put in place 
 Now, I am doing this on an iPhone SE running 11.2.6 on the unc0ver jailbreak. So I am compiling the program on the device.
 
 ## The setup
-
+------
 First I want to compile the program.
+
 `
 clang buffer_overflow.c -isysroot $THEOS/sdks/iPhoneOS11.2.sdk/ -fno-stack-protector -fno-pic -o buffer_overflow
 `
@@ -70,11 +71,11 @@ mobile@ven1xus-SE:~/programs/challenges$ ldid -Sent.plist buffer_overflow
 
 The first command run essentially prints out the entitlement used for signing the ls command. I then take this entitlement and put it into a file that I can use to sign my own programs. Finally I sign buffer_overflow with the ls entitlement.
 
-It is required to sign executables on iOS devices because it is a security precaution implemented by apple back in iOS 2 or something like that.
+It is required to sign executables on iOS devices because it is a security measure implemented by apple back in iOS 2 or something like that.
 
 
 ## Analysis
-
+------
 Now we have to analyze the binary, so I will use GDB (Gnu Debugger) or send it over to my MacBook using scp.
 
 `
@@ -115,7 +116,7 @@ End of assembler dump.
 As you can see the memory address of the function is `0x0000000100007e7c`
 
 ## Exploit
-
+------
 Now we have to see how many characters gets() can put into the buffer by adding characters until an illegal instruction is thrown. For me it was ~33 characters.
 
 ```
@@ -144,7 +145,7 @@ done
 
 Running this gives the follows eventually.
 
-[Final output](complete.png)
+![Final output](complete.png)
 
 **Congratulations you've done a buffer overflow on iOS!**
 
