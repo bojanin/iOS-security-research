@@ -1,6 +1,16 @@
-# Exploitation write ups
+#Repository Details
 
-Write ups of various exploitation challenges or things I want to try and solve. Looking forward I think all of them will be about binary exploitation and/or iOS related.
+When my interest started moving towards security rather than development I didn't know where to start. This repository is for people like me who need guidance in the field of iOS security.
+Most _guides_ tend to lean towards the following path structures.
 
-If you see any changes or recommendations or want me to try something just let me know.
+1. Learn C / ARM Assembly (learn together).
+2. Understand iOS internals.
+3. Learn common exploit techniques and tools.
+4. Read on how previous jailbreaks work and try to create one from scratch.
 
+
+Useful links: 
+
+* a
+* a
+* a
