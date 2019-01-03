@@ -34,6 +34,10 @@ ___Books___
 * [ARM exploitation by Billy Ellis](https://zygosec.com/book.html)
 
 
+___Motivation___
+* [Watch first 20 minutes for some motivation](https://www.youtube.com/watch?v=39yPeiY808w)
+* [30 hour method](https://azeria-labs.com/the-importance-of-deep-work-the-30-hour-method-for-learning-a-new-skill/)
+* [When you're suffering from information overload](https://azeria-labs.com/paradox-of-choice/)
 ## Final thoughts
 
 This will get updated periodically once my knowledge increases and I become a more advanced researcher. If you are a true beginner, try to avoid the later useful links and start with C and ARM, and once you know you are proficient, start looking at the later links.
