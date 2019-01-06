@@ -16,12 +16,15 @@ __Learning C__
 * [How to write C in current years](https://matt.sh/howto-c)
 * [The book I used to learn C.](http://icube-icps.unistra.fr/img_auth.php/d/db/ModernC.pdf)
 
+  
 My personal tip: Build something with C. Maybe start small and build a string reverser, then grow until you think you've learned enough to read other peoples code. If you are in university, take operating system courses and others that teach and/or use C/C++.
 
 __Learning ARM__
 * [The holy grail of learning ARM imo.](https://azeria-labs.com)
 * [Arguably long but very rich tour of ARM.](https://www.coranac.com/tonc/text/asm.htm)
-
+* [A Ray wenderlich tutorial](https://www.raywenderlich.com/2705-ios-assembly-tutorial-understanding-arm)
+  * Ray wenderlich has some interesting and useful (althought a bit pricey) books on reverse engineering as well.
+  
 My personal tip: ___BUILD SOMETHING___ with ARM. Write a for loop and look at the underlying instructions, call functions and see how branching works, follow the azeria labs introduction until the end. If you are in university, take courses that teach assembly, most of which are taught by the computer engineering departments or EE.
 
 ___Other useful links___
